@@ -23,6 +23,9 @@ const Header = () => {
   const searchQuery = URLSearch.getAll("q")
   const [search,setSearch] = useState(searchQuery)
 
+
+  console.log("userhead", user)
+
   const handleLogout = async (e) => {
     const fetchData = await fetch(FullApi.userLogout.url, {
       method: FullApi.userLogout.method,
@@ -41,7 +44,6 @@ const Header = () => {
     }
   };
 
-  //console.log("checking context", context)
 
   const handleSearch = (e)=>{
     const { value } = e.target

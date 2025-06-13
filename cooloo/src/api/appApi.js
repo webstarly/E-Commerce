@@ -3,89 +3,88 @@ const backendDomain = process.env.REACT_APP_BACKEND_URL;
 const FullApi = {
     signUP : {
         url : `${backendDomain}/api/signup`,
-        method : "Post"
-        //`${backendDomain}/api/signup`,
+        method : "post"
     },
     signIN : {
         url : `${backendDomain}/api/signin`,
-        method : "Post"
+        method : "post"
       // `${backendDomain}/api/signin`
     },
     forgetPassword : {
         url : `${backendDomain}/api/forget_password`,
-        method : "Post"
+        method : "post"
     },
     resetPassword : {
         url : `${backendDomain}/api/reset_password`,
-        method : "Post"
+        method : "post"
     },
     currentUSER: {
         url : `${backendDomain}/api/user_details`,
-        method : "Get"
+        method : "get"
     },
     userLogout: {
         url : `${backendDomain}/api/logout`,
-        method : "Get"
+        method : "get"
     },
     getAllUsers:{
         url : `${backendDomain}/api/all_users`,
-        method : "Get"
+        method : "get"
     },
     userUpdate: {
         url : `${backendDomain}/api/update_user`,
-        method : "Post"
+        method : "post"
     },
     productUpload: {
         url : `${backendDomain}/api/upload_product`,
-        method : "Post"
+        method : "post"
     },
     getProducts: {
         url : `${backendDomain}/api/get_products`,
-        method : "Get"
+        method : "get"
     },
     updateProduct: {
         url : `${backendDomain}/api/update_product` ,
-        method : "Post"
+        method : "post"
     },
     loadCategoryProduct: {
         url : `${backendDomain}/api/get_categoryProduct`,
-        method : "Get"
+        method : "get"
     },
     showAllCategoryProduct: {
         url : `${backendDomain}/api/get_allcategoryproduct`,
-        method : "Post"
+        method : "post"
     },
     productDetails : {
         url : `${backendDomain}/api/product_details`,
-        method : "Post"
+        method : "post"
     },
     productAddToCart : {
         url : `${backendDomain}/api/add_to_cart`,
-        method : "Post"
+        method : "post"
     }, 
     addToCartProductCount : {
         url : `${backendDomain}/api/countAddToCartProduct`,
-        method : "Get"
+        method : "get"
     }, 
     addToCartProductView : {
         url : `${backendDomain}/api/view_card_product`,
-        method : "Get"
+        method : "get"
     }, 
     updateCartProduct : {
         url : `${backendDomain}/api/update_cart_product`,
-        method : "Post"
+        method : "post"
     },
     deleteCartProduct : {
         url : `${backendDomain}/api/delete_cart_product`,
-        method : "Post"
+        method : "post"
     },
     searchProduct : {
         url : `${backendDomain}/api/search`,
-        method : "Get"
+        method : "get"
     },
     filterProduct : {
         url : `${backendDomain}/api/filter_product`,
-        method : "Post"
+        method : "post"
     } 
 }
 

@@ -5,7 +5,10 @@ import Context from '../context'
 import addToCart from '../helpers/addToCart'
 import { Link } from 'react-router-dom'
 
-const VerticalCardDown = ({loading, data = []}) => {
+const VerticalCardDown = ({loading, data}) => {
+
+    console.log("verticalcarddata", data);
+
     const loadingList = new Array(13).fill(null)
     const { fetchUserAddToCart } = useContext(Context)
 
@@ -38,9 +41,8 @@ const VerticalCardDown = ({loading, data = []}) => {
              })
          ) : (
              data.map((product,index)=>{
-                console.log("productdata", product)
                  return(
-                     <Link to={"/product/"+product?._id} key={'product'+index} className='w-full min-w-[280px]  md:min-w-[300px] max-w-[280px] md:max-w-[300px]  bg-white rounded-sm shadow ' onClick={scrollTop}>
+                     <Link to={"/product/"+product?._id} key={'product'+index} className='w-full border min-w-[280px]  md:min-w-[300px] max-w-[280px] md:max-w-[300px]  bg-white rounded-sm shadow ' onClick={scrollTop}>
                          <div className='bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center'>
                              <img src={product.productImage[0]} className='object-scale-down h-full hover:scale-110 transition-all mix-blend-multiply'/>
                          </div>
