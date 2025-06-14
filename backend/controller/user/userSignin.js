@@ -20,9 +20,13 @@ async function userSignInController(req, res) {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      throw new Error("User not Found");
+      return res.status(401).json({
+        message: "User not found.",
+        error: true,
+        success: false,
+      });
     }
-    console.log("user", user);
+    
 
     const checkPassword = await bcrypt.compare(password, user.password);
     if (checkPassword) {
@@ -33,13 +37,14 @@ async function userSignInController(req, res) {
       const token = await jwt.sign(
         tokenData,
         process.env.TOKEN_SECRET_KEY,
-        { expiresIn: 60 * 60 * 8 }
+        { expiresIn: "8h" }
       );
 
       const tokenOption = {
         httpOnly: true,
         secure: true,
         sameSite: "None",
+        maxAge: 1000 * 60 * 60 * 8,
       };
 
       res.cookie("token", token, tokenOption).json({
