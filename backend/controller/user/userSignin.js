@@ -44,7 +44,7 @@ async function userSignInController(req, res) {
         httpOnly: true,
         secure: true,
         sameSite: "None",
-        maxAge: 1000 * 60 * 60 * 8,
+        maxAge: 7 * 24 * 60 * 60 * 1000,
       };
 
       res.cookie("token", token, tokenOption).json({
